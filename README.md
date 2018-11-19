@@ -2,7 +2,7 @@
 MoldoVin repository for final thesis project
 
 #### Technology Stack
-- Front-End: React.js
+- Front-End: Next.js
 - Backend: [Node.js](https://github.com/cph-pc56-Projects/moldovin-backend)   
 
 #### Installation
