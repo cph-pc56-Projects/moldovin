@@ -1,0 +1,26 @@
+{
+  "name": "moldovin",
+  "version": "1.0.0",
+  "description": "Repo for front-end part of moldovin webshop",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cph-pc56-Projects/moldovin.git"
+  },
+  "author": "Petru, Dimitri, Yolanda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cph-pc56-Projects/moldovin/issues"
+  },
+  "homepage": "https://github.com/cph-pc56-Projects/moldovin#readme",
+  "dependencies": {
+    "next": "^7.0.2",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3"
+  }
+}
