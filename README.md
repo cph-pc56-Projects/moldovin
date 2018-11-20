@@ -11,7 +11,7 @@ then `npm run dev`
 and open on `localhost:3000`    
 
 #### Notes
-[Material-ui](https://material-ui.com/getting-started/usage/) has been added as the css framework for this project.    
+[ReactBoostrap](https://react-bootstrap.netlify.com) has been added as the css framework for this project.    
 [Next.js](https://nextjs.org/docs/) as the minimal SSR front-end framework.
 
 
