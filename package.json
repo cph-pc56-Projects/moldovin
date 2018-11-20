@@ -19,7 +19,6 @@
   },
   "homepage": "https://github.com/cph-pc56-Projects/moldovin#readme",
   "dependencies": {
-    "@material-ui/core": "^3.5.1",
     "next": "^7.0.2",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
