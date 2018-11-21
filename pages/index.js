@@ -1,10 +1,12 @@
-import Header from '../components/Header';
+import Layout from '../components/Layout';
+import { Button } from 'react-bootstrap';
 
 const home = () => (
-    <div>
+    <Layout>
+        <h1>Hello </h1>
         
-        <h1>Hello MoldoVin</h1>
-    </div>
+    </Layout>
+
 )
 
 export default home;
