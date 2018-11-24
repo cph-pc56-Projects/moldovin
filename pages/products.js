@@ -1,5 +1,5 @@
 import Layout from '../components/Layout';
-import { Button } from 'react-bootstrap';
+//import { Button } from 'react-bootstrap';
 
 const products = (props) => {
     return (
