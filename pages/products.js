@@ -1,17 +1,18 @@
 import Layout from '../components/Layout';
-//import { Button } from 'react-bootstrap';
+import WineCard from '../components/wineCard';
+import PaperGrid from '../components/PaperGrid'
 
 const products = (props) => {
     return (
         <Layout>
-            <div className={'w3-display-container w3-green'} style={{ height: '300px' }}>
-                <div className={'w3-display-middle'}>
-                    <p className='w3-red w3-padding'>Products</p>
-                    <Button>Show</Button>
+            <div className={'w3-container w3-margin'}>
+                <div className={'w3-container w3-center w3-white'}>
+                    <h2>Discover Our Wine Collection</h2>
                 </div>
-                
+                <div className={'w3-margin-top'}>
+                    <PaperGrid />                    
+                </div>
             </div>
-            <p>Best Wine</p>
         </Layout>
 
     )
