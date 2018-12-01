@@ -9,33 +9,33 @@ export default () => (
   <div >
     <style jsx>{`
     font-family: "Lato", sans-serif;
-    height: 100%;
+    height: 50%;
+    width: 85%;
     text-align: Center;          
     color: darkgrey;
-    line-height: 1.2;
-    padding: 30px 50px 50px 80px;
-    background-image: url('../static/assets/');
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-attachment: fixed;
+    line-height: 1.0;
+    padding: 10px 50px 50px 200px;
     `}
        </style> 
+       <figure>
+        <img src={`../static/assets/bottle.jpg`} />
+       </figure>
+           
        <div>
        <h1> ABOUT US </h1>
          MoldoVin is a wine importer and distribution company that solely wants to provide the Danish market with Moldovan wine. Hence, the name MoldoVin. 
          The company was founded almost 2 years ago. This means that MoldoVin is an early startup company. Company’s team is less than 5 people. 
        </div>
   </div>
-          
-      <div> 
+       <div> 
       <style jsx>{`
       font-family: "Lato", sans-serif;
-      height: 100%;
-      width: 100%;
-      text-align: Right;          
+      height: 50%;
+      width: 80%;
+      text-align: center;          
       color:grey;
-      line-height: 1.2;
-      padding: 10px 30px 20px 260px;
+      line-height: 1.0;
+      padding: 10px 30px 10px 260px;
       background-image: url('../static/assets/MDmap.png');
       background-repeat: no-repeat;
       background-size: cover;
@@ -71,11 +71,12 @@ export default () => (
      <div>
         <style jsx>{`
           font-family: "Lato", sans-serif;
-          height: 100%;
+          height: 50%;
+          width: 75%;
           text-align: Center;          
           color: #777;
-          line-height: 1.2;
-          padding: 30px 30px 50px 30px;
+          line-height: 1.0;
+          padding: 10px 50px 50px 200px;
           `}
           </style> 
             <h1> WHY MOLDOVA </h1>
@@ -84,7 +85,7 @@ export default () => (
                  The Moldovan people have a rich tradition of winemaking.
                  "Moldovans consider wine to be in the blood of their people. They are born with wine, live with wine and die with wine." 
                  </div>
-                 </div>    
+                 </div>   
        <div class="footer">
              <style jsx>{` 
              position: fixed;
