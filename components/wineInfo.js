@@ -135,7 +135,7 @@ class WineInfo extends React.Component {
           <hr />         
             <div className={'w3-display-bottommiddle w3-margin-bottom'}>
               <Button                
-                variant='raised'
+                variant='contained'
                 color='primary'
               > Add To Cart
             <AddShoppingCartIcon className={classes.rightIcon} />
