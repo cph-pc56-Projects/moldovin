@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import Input from '@material-ui/core/Input'
 import Button from '@material-ui/core/Button'
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
+import Link from 'next/link';
 
 const styles = theme => ({
   root: {
@@ -132,15 +133,17 @@ class WineInfo extends React.Component {
               </div>
             </div>
           </div>
-          <hr />         
-            <div className={'w3-display-bottommiddle w3-margin-bottom'}>
-              <Button                
+          <hr />
+          <div className={'w3-display-bottommiddle w3-margin-bottom'}>
+            <Link href='/checkout'>
+              <Button
                 variant='contained'
                 color='primary'
               > Add To Cart
             <AddShoppingCartIcon className={classes.rightIcon} />
               </Button>
-            </div>          
+            </Link>
+          </div>
         </Paper>
       </div>
     );
