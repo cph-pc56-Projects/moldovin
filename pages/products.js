@@ -1,6 +1,6 @@
 import Layout from '../components/Layout';
 import WineCard from '../components/wineCard';
-import PaperGrid from '../components/PaperGrid'
+import WineCards from '../components/WineCards'
 
 const products = (props) => {
     return (
@@ -10,7 +10,7 @@ const products = (props) => {
                     <h2>Discover Our Wine Collection</h2>
                 </div>
                 <div className={'w3-margin-top'}>
-                    <PaperGrid />                    
+                    <WineCards />                    
                 </div>
             </div>
         </Layout>
