@@ -14,11 +14,16 @@ export default () => (
     font-family: "Lato", sans-serif;
     height: 50%;
     width: 90%;         
-    color: darkgrey;
+    color: #777;
     img align: left;
-    line-height: 1.0;
-    padding: 10px 50px 50px 200px;
-    background-colour: lightgrey;
+    line-height: 1.8;
+    padding: 10px 50px 80px 200px;
+    background-colour: white;
+    background-image: url("../static/assets/logo.png");
+    background-repeat: no-repeat;
+    background-position: middle bottom;
+    background-size: cover;
+    background-attachment: fixed;
     `}
        </style>          
        <div>
