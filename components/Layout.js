@@ -29,7 +29,7 @@ const Layout = (props) => (
 
 
     <Provider store={store}>
-        <div>
+    <div>
             <Head>
                 <title>MoldoVin</title>
                 <meta
@@ -40,16 +40,13 @@ const Layout = (props) => (
                 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" />
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-            </Head>
-            <style jsx global>{`
-            body { 
-                background: #f1f2f2;
-                
-            }
-        `}</style>
-            <NavMenu />
-            {props.children}
-        </div>
+            </Head>               
+        <NavMenu />
+            {props.children}  
+            </div>    
+              
     </Provider>
+    
 )
+
 export default Layout;
