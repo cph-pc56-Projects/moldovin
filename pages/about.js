@@ -15,6 +15,7 @@ export default () => (
     color: darkgrey;
     line-height: 1.0;
     padding: 10px 50px 50px 200px;
+    background-colour: lightgrey;
     `}
        </style>          
        <div>
