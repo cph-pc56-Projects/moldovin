@@ -19,7 +19,7 @@ export default () => (
     line-height: 1.8;
     padding: 10px 50px 80px 200px;
     background-colour: white;
-    background-image: url("../static/assets/logo.png");
+    background-image: url("../static/assets/");
     background-repeat: no-repeat;
     background-position: middle bottom;
     background-size: cover;
@@ -71,15 +71,16 @@ export default () => (
              position: fixed;
              left: 0;
              bottom: 0;
+             height:10%;
              width: 100%;
              background-color: grey;
              color: white;
              text-align: center;   
              `}
             </style>
-                 <a href = "http://moldovin.dk/">Website</a>
-                 <a href = "https://www.facebook.com/MoldoVin/">Facebook</a>
-                 <a href = "https://instagram.com/moldovin.dk?utm_source=ig_profile_share&igshid=ve95kp57ph82"> instagram </a>
+                 <a href = "http://moldovin.dk/"></a>
+                 <a href = "https://www.facebook.com/MoldoVin/">Facebook<i class="fa fa-facebook"></i></a>
+                 <a href = "https://instagram.com/moldovin.dk?utm_source=ig_profile_share&igshid=ve95kp57ph82">Instagram <i class="fa fa-instagram"></i></a>
               </div>
         
     </Layout>
