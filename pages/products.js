@@ -1,5 +1,6 @@
 import Layout from '../components/Layout';
-//import { Button } from 'react-bootstrap';
+import WineCard from '../components/wineCard';
+import WineCards from '../components/WineCards'
 
 const products = (props) => {
     return (
@@ -10,7 +11,6 @@ const products = (props) => {
                     <Button>Show</Button>
                 </div>     
             </div>
-            <p>Best Wine</p>
         </Layout>
 
     )

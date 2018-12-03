@@ -9,17 +9,17 @@ const home = () => (
     <Layout >
 
 
-        <div className={'bgImage w3-display-container'} style={{  }}>
+        <div className={'bgImage w3-display-container'} style={{}}>
             <div className={'w3-display-middle'} style={{ whiteSpace: 'nowrap' }}>
                 <figure>
                     <img src={`../static/assets/logo.png`} />
                 </figure>
                 <div className={'w3-center'}>
-                <Link href='/about'>
-                    <Button variant='contained' style={{ background: '#404040', color: 'white', marginRight: '10px' }}>About</Button>
+                    <Link href='/about' >
+                        <Button variant='contained' style={{ background: '#404040', color: 'white', marginRight: '10px' }}>About</Button>
                     </Link>
-                    <Link href='/products'>
-                        <Button ariant='contained' style={{ background: '#EE4040', color: 'white' }}>Shop</Button>
+                    <Link href='/products' prefetch>
+                        <Button variant='contained' style={{ background: '#EE4040', color: 'white' }}>Shop</Button>
                     </Link>
                 </div>
 
