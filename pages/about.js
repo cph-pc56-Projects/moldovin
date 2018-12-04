@@ -9,24 +9,23 @@ export default () => (
   <div >
     <style jsx>{`
     font-family: "Lato", sans-serif;
-    height: 50%;
-    width: 85%;
-    text-align: Center;          
-    color: darkgrey;
-    line-height: 1.0;
-    padding: 10px 50px 50px 200px;
-    background-colour: lightgrey;
+    height: 80%;
+    width: 100%;         
+    color: #777;
+    line-height: 1.8;
+    padding: 10px 50px 80px 190px;
+    background-colour: white;
     `}
        </style>          
-       <div>
-       <img src={`../static/assets/bottle.jpg`} />
-       <h1> ABOUT US </h1>
+      <div>
+       <img class={"img-responsive"} src={`../static/assets/bottle.jpg`} />
+       <p>ABOUT US </p>
          MoldoVin is a wine importer and distribution company that solely wants to provide the Danish market with Moldovan wine. Hence, the name MoldoVin. 
          The company was founded almost 2 years ago. This means that MoldoVin is an early startup company. Company’s team is less than 5 people. 
-       </div>
-  <div>
-      <img src={`../static/assets/MDmap.png`} />
-      <h1>History of Wine in Moldova </h1>
+      </div>
+      <div>
+       <img class={"img-responsive"} src={`../static/assets/MDmap.png`} align={"right"}/>
+       <p>HISTORY OF WINE IN MOLDOVA </p>
             Grapes have been grown in the hills of the Eastern European country of Moldova for thousands of years. 
             The earliest winemaking in the world can be traced to the late neolithic period in Mesopotamia and the south and east of the black sea.
             From here, the cultivation of grapes spread throughout the ancient world.
@@ -51,28 +50,14 @@ export default () => (
             </div> 
        
      <div>
-            <h1> WHY MOLDOVA </h1>
+     <img class={"img-responsive"} src={`../static/assets/blacknwhite.jpg`} align={"left"}/>
+            <p> WHY MOLDOVA </p>
                  The little known European country of Moldova is putting its name on the map for its fantastic wines. The rich flavor of these wines is fast becoming recognised by world-renowned wine experts. Moldovan wine has great texture, warmth and flavour that will surprise and delight.
                  Moldova is challenging the long-established wineries of the world, pushing and changing what we traditionally think of as a good wine region. This is partly down to the rich soil and the warm humid continental climate that helps create the perfect conditions for growing grape vines.
                  The Moldovan people have a rich tradition of winemaking.
                  "Moldovans consider wine to be in the blood of their people. They are born with wine, live with wine and die with wine." 
                  </div>
                  </div>   
-       <div class="footer">
-             <style jsx>{` 
-             position: fixed;
-             left: 0;
-             bottom: 0;
-             width: 100%;
-             background-color: grey;
-             color: white;
-             text-align: center;   
-             `}
-            </style>
-                 <a href = "http://moldovin.dk/">Website</a>
-                 <a href = "https://www.facebook.com/MoldoVin/">Facebook</a>
-                 <a href = "https://instagram.com/moldovin.dk?utm_source=ig_profile_share&igshid=ve95kp57ph82"> instagram </a>
-              </div>
         
     </Layout>
 

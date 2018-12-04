@@ -5,6 +5,7 @@ import WineCards from '../components/WineCards'
 const products = (props) => {
     return (
         <Layout>
+        <div>
             <div className={'w3-container w3-margin'}>
                 <div className={'w3-container w3-center w3-white'}>
                     <h2>Discover Our Wine Collection</h2>
@@ -12,7 +13,9 @@ const products = (props) => {
                 <div className={'w3-margin-top'}>
                     <WineCards />                    
                 </div>
-            </div>
+            </div>       
+            
+        </div>
         </Layout>
 
     )
