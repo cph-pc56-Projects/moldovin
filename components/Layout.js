@@ -2,33 +2,33 @@ import Head from 'next/head';
 import NavMenu from '../components/NavMenu'
 import '../css/style.css';
 
-// Setting up redux in the layout component as it is the one
-// who wraps every other component in the app
-// this gives us access to the redux store anywhere in the app
-import { Provider } from 'react-redux';
-import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
-import orderReducer from '../store/reducers/order';
-import productsReducer from '../store/reducers/products';
-import thunk from 'redux-thunk';
+// // Setting up redux in the layout component as it is the one
+// // who wraps every other component in the app
+// // this gives us access to the redux store anywhere in the app
+// import { Provider } from 'react-redux';
+// import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
+// import orderReducer from '../store/reducers/order';
+// import productsReducer from '../store/reducers/products';
+// import thunk from 'redux-thunk';
 
-const rootReducer = combineReducers({
-    order: orderReducer,
-    products: productsReducer
-})
-// compose enhancer is for redux plugin in dev tools
-const composeEnhancers = typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+// const rootReducer = combineReducers({
+//     order: orderReducer,
+//     products: productsReducer
+// })
+// // compose enhancer is for redux plugin in dev tools
+// const composeEnhancers = typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 
 
-const store = createStore(rootReducer, composeEnhancers(
-    applyMiddleware(thunk)
-));
+// const store = createStore(rootReducer, composeEnhancers(
+//     applyMiddleware(thunk)
+// ));
 
 
 const Layout = (props) => (  
 
 
-    <Provider store={store}>
+    
       <div>
             <Head>
                 <title>MoldoVin</title>
@@ -49,7 +49,7 @@ const Layout = (props) => (
             <NavMenu />
             {props.children}
         </div>
-    </Provider>
+  
     
 )
 

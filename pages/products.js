@@ -1,8 +1,11 @@
 import Layout from '../components/Layout';
 import WineCard from '../components/wineCard';
 import WineCards from '../components/WineCards'
+import InjectRedux from '../components/InjectRedux';
+import { connect } from 'react-redux';
 
 const products = (props) => {
+    console.log('props', props);
     return (
         <Layout>
         
@@ -21,4 +24,4 @@ const products = (props) => {
     )
 }
 
-export default products;
+export default InjectRedux(connect(state=>state)(products));
