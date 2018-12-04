@@ -29,7 +29,7 @@ const Layout = (props) => (
 
 
     <Provider store={store}>
-        <div>
+      <div>
             <Head>
                 <title>MoldoVin</title>
                 <meta
@@ -50,5 +50,7 @@ const Layout = (props) => (
             {props.children}
         </div>
     </Provider>
+    
 )
+
 export default Layout;
