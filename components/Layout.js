@@ -43,8 +43,7 @@ const Layout = (props) => (
             </Head>
             <style jsx global>{`
             body { 
-                background: #f1f2f2;
-                
+                background: #f1f2f2;                
             }
         `}</style>
             <NavMenu />
