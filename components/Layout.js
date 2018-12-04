@@ -29,7 +29,7 @@ const Layout = (props) => (
 
 
     <Provider store={store}>
-    <div>
+      <div>
             <Head>
                 <title>MoldoVin</title>
                 <meta
@@ -40,35 +40,15 @@ const Layout = (props) => (
                 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" />
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-            </Head>               
-        <NavMenu />
-            {props.children}  
-
-            <div class="footer">
-             <style jsx>{` 
-             position: fixed;
-             left: 0;
-             bottom: 0;
-             height:10%;
-             width: 100%;
-             background-color: grey;
-             color: white;
-             text-align: center;   
-             `}
-            </style>
-                 <a href = "https://instagram.com/moldovin.dk?utm_source=ig_profile_share&igshid=ve95kp57ph82">
-                 <i class="fa fa-instagram"></i>
-                 Instagram</a>
-                 <a href = "http://moldovin.dk/">
-                 <i class="fa fa-facebook"></i>
-                 website</a>
-                 <a href = "https://www.facebook.com/MoldoVin/">
-                 <i class="fa fa-facebook"></i>
-                 Facebook</a>
-              </div>
-            </div> 
-
-              
+            </Head>
+            <style jsx global>{`
+            body { 
+                background: #f1f2f2;                
+            }
+        `}</style>
+            <NavMenu />
+            {props.children}
+        </div>
     </Provider>
     
 )
