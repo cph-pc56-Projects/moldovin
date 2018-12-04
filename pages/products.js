@@ -13,7 +13,9 @@ const products = (props) => {
                 <div className={'w3-margin-top'}>
                     <WineCards />                    
                 </div>
-            </div>
+            </div>       
+            
+        
         </Layout>
 
     )
