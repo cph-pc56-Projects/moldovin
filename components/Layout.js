@@ -44,29 +44,22 @@ const Layout = (props) => (
         <NavMenu />
             {props.children}  
 
-            <div class="footer">
-             <style jsx>{` 
-             position: fixed;
-             left: 0;
-             bottom: 0;
-             height:10%;
-             width: 100%;
-             background-color: grey;
-             color: white;
-             text-align: center;   
-             `}
-            </style>
-                 <a href = "https://instagram.com/moldovin.dk?utm_source=ig_profile_share&igshid=ve95kp57ph82">
+            <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+
+            <a href = "https://instagram.com/moldovin.dk?utm_source=ig_profile_share&igshid=ve95kp57ph82">
                  <i class="fa fa-instagram"></i>
                  Instagram</a>
-                 <a href = "http://moldovin.dk/">
-                 <i class="fa fa-facebook"></i>
-                 website</a>
-                 <a href = "https://www.facebook.com/MoldoVin/">
-                 <i class="fa fa-facebook"></i>
-                 Facebook</a>
-              </div>
-            </div> 
+            <div class="w3-xlarge w3-section">
+        
+              <a href="https://www.facebook.com/MoldoVin/" target="u_blank">
+                <i class="fa fa-facebook w3-hover-text-indigo"></i>
+              </a>
+              <a href="https://www.linkedin.com/company/moldovin/" target="u_blank">
+                <i class="fa fa-linkedin w3-hover-text-indigo"></i>
+              </a>
+            </div>
+            </footer>
+         </div> 
 
               
     </Provider>
