@@ -53,8 +53,7 @@ class WineInfo extends React.Component {
     const bottleId = this.props.router.query.id;
     const [bottle] = this.props.wines.filter(wine => {
       return wine.id == bottleId;
-    })
-    console.log('Mounted: ', bottle);
+    })   
     this.setState({
       price: bottle.price,
       total: bottle.price
@@ -93,9 +92,6 @@ class WineInfo extends React.Component {
     const [bottle] = wines.filter(wine => {
       return wine.id == bottleId;
     })
-    console.log('bottle', bottle)
-
-
     return (
       <div>
         <Paper className={classes.root + ' w3-display-container'} elevation={1}>
@@ -160,7 +156,7 @@ class WineInfo extends React.Component {
           </div>
           <hr />
           <div className={'w3-display-bottommiddle w3-margin-bottom'}>
-            <Link href='/checkout'>
+            <Link href='/cart'>
               <Button
                 variant='contained'
                 color='primary'

@@ -7,11 +7,14 @@ import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import orderReducer from '../store/reducers/order';
 import productsReducer from '../store/reducers/products';
+import cartReducer from '../store/reducers/cart';
 import thunk from 'redux-thunk';
+
 
 const rootReducer = combineReducers({
     order: orderReducer,
-    products: productsReducer
+    products: productsReducer,
+    cart: cartReducer
 })
 // compose enhancer is for redux plugin in dev tools
 const composeEnhancers = typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
