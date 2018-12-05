@@ -7,6 +7,11 @@ import Input from '@material-ui/core/Input'
 import Button from '@material-ui/core/Button'
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import Link from 'next/link';
+import { withRouter } from 'next/router'
+import InjectRedux from '../components/InjectRedux';
+import { connect } from 'react-redux';
+
+
 
 const styles = theme => ({
   root: {
@@ -36,10 +41,24 @@ const styles = theme => ({
 
 
 class WineInfo extends React.Component {
+
+
   state = {
     price: 125,
     quantity: 1,
     total: 125
+  }
+
+  componentDidMount() {
+    const bottleId = this.props.router.query.id;
+    const [bottle] = this.props.wines.filter(wine => {
+      return wine.id == bottleId;
+    })
+    console.log('Mounted: ', bottle);
+    this.setState({
+      price: bottle.price,
+      total: bottle.price
+    })
   }
 
   validateQuantity = (number) => {
@@ -68,37 +87,43 @@ class WineInfo extends React.Component {
   }
 
   render() {
-    const { classes } = this.props;
+    const { classes, wines, router } = this.props;
     const { price, total } = this.state
+    const bottleId = router.query.id;
+    const [bottle] = wines.filter(wine => {
+      return wine.id == bottleId;
+    })
+    console.log('bottle', bottle)
+
 
     return (
       <div>
         <Paper className={classes.root + ' w3-display-container'} elevation={1}>
           <Typography className={'w3-center'} variant="h4" component="h2">
-            Lacrima Dulce
+            {bottle.name}
           </Typography>
           <Typography className={'w3-center'} color='textSecondary'>
-            produced by Cricova
+            produced by {bottle.producer}
           </Typography>
           <hr />
           <Typography variant='subtitle1'>
             Wine Type:
           </Typography>
           <Typography variant='body1' color='textSecondary'>
-            Semisweet White Sparkling Wine
+            {bottle.type}
           </Typography>
           <Typography variant='subtitle1'>
             Description:
           </Typography>
           <Typography variant='body1' color='textSecondary'>
-            This luxury sparkling white wine is a perfect party wine. The semisweet flavor lends to easy consumption and leaves a very neutral and pleasant aftertaste. This wine is remarkable for its shiny light straw color, full, nicely-balanced taste and rich flowery bouquet with delicate aromas.
+            {bottle.description}
           </Typography>
           <Typography className={'w3-center'} variant='subtitle2' color='textSecondary' >
-            <span>Alc 9.5% Vol</span>
-            <span style={{ paddingLeft: '30px' }}>6° - 8°C</span>
+            <span>Alc {bottle.alcohol}% Vol</span>
+            <span style={{ paddingLeft: '30px' }}>{bottle.storingTemperature}</span>
           </Typography>
           <Typography variant='subtitle1'>
-            Price: <span className={'w3-large'}>{price} DKK</span> incl VAT
+            Price: <span className={'w3-large'}>{bottle.price} DKK</span> incl VAT
           </Typography>
           <hr />
           <div className={'w3-row-padding'} style={{ height: '100px', background: '#404040', color: 'white' }}>
@@ -154,4 +179,10 @@ WineInfo.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(WineInfo);
+const mapStateToProps = state => {
+  return {
+    wines: state.products.wines
+  }
+}
+
+export default InjectRedux(connect(mapStateToProps)(withStyles(styles)(withRouter(WineInfo))));

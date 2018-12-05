@@ -4,8 +4,7 @@ import WineCards from '../components/WineCards'
 import InjectRedux from '../components/InjectRedux';
 import { connect } from 'react-redux';
 
-const products = (props) => {
-    console.log('props', props);
+const products = (props) => {    
     return (
         <Layout>
         
