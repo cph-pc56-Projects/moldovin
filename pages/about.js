@@ -8,27 +8,18 @@ export default () => (
     <Layout>
   <div >
     <style jsx>{`
-    font-family: "Lato", sans-serif;
-    height: 80%;
-    width: 100%;         
-    color: #777;
-    line-height: 1.8;
-    padding: 10px 50px 80px 190px;
     background-colour: white;
-    background-image: url('../static/assets/bottle.jpg');
+    background-image: url('../static/assets/bottle.jpg'),url('../static/assets/bottle.jpg'),url('../static/assets/bottle.jpg');
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: auto;
 
     `}
        </style>          
       <div>
-       <div class="w3-content w3-container w3-padding-64" id="about">
-       <h3 class="w3-center">ABOUT US</h3>
-       <p class="w3-center">
-         <em>We love wine</em>
-       </p>
+       <div className="w3-content w3-container w3-padding-64" id="about">
+       <h3 className="w3-center">ABOUT US</h3>
    
        <p align="center">Based in Copenhagen, Denmark, MoldoVin is providing the Danish wine market with high quality
          Moldovan wine. Our team
@@ -40,16 +31,11 @@ export default () => (
          into the homes and onto the tables of Scandinavian wine enthusiasts. </p>
    
      </div>
-
-    <div class="w3-center w3-container">
-    <button class="w3-btn w3-grey w3-text-white w3-margin" onclick="w3.toggleShow('#History')">History</button>
-    </div>
-      <div class="w3-container">
-    <div class="col-lg-8 col-lg-offset-2 w3-panel w3-center w3-card-4" id="History">
-      <span onclick="this.parentElement.style.display='none'" class="w3-closebtn">x</span>
+      <div className="w3-container">
+      <div className={"col-lg-8 col-lg-offset-2 w3-panel w3-center w3-card-4"} id={"History"}>
       <h2>History of Wine in Moldova</h2>
-      <div align="left" class="w3-left">
-        <img class={"w3-left w3-padding-small"} width={"35%;"} src={`../static/assets/MDmap.png`}>
+      <div align="center" classname="w3-left">
+        <img className={"w3-left w3-padding-small"} width={"35%;"} src={`../static/assets/blacknwhite.jpg`}>
         </img>
         <p> Grapes have been grown in the hills of the Eastern European country of Moldova for thousands of years. The
           earliest
@@ -62,8 +48,9 @@ export default () => (
           colonies
           and developed the winemaking infrastructure. </p>
          <figure>
-          <img src={`../static/assets/Stefan.jpg`} class={"w3-right w3-grayscale-min"} width={"35%;"}> 
+          <img src={`../static/assets/Stefan.jpg`} className={"w3-right w3-grayscale-min"} width={"35%;"}> 
           </img>
+          <figcaption>Stefan Cel Mare</figcaption>
           </figure>
 
         <p>Stefan cel Mare (Stephen the Great), Voivode of Moldova from 1457 to 1504, is a central figure in Moldovan
@@ -121,12 +108,12 @@ export default () => (
     </div>
     </div>
     
-     <div class="w3-content w3-container w3-padding-64" id="Moldova">
-    <h3 class="w3-center">Why Moldova?</h3>
-    <img class={"w3-left img-responsive"} padding={"20px 10px"} src={`../static/assets/MDmap.png`}>
+     <div className="w3-content w3-container w3-padding-64" id="Moldova">
+    <h3 className="w3-center">Why Moldova?</h3>
+    <img className={"w3-center img-responsive"} padding={"20px, 10px"} src={`../static/assets/MDmap.png`}>
     </img>
 
-    <div padding={"10px 0px"}>
+    <div padding={"10px, 0px"}>
       <p>The little known European country of Moldova is putting its name on the map for its fantastic wines. The rich
         flavor
         of these wines is fast becoming recognised by world-renowned wine experts. Moldovan wine has great texture,
