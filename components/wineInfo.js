@@ -10,6 +10,7 @@ import Link from 'next/link';
 import { withRouter } from 'next/router'
 import InjectRedux from '../components/InjectRedux';
 import { connect } from 'react-redux';
+import * as actions from '../store/actions/cart';
 
 
 
@@ -44,7 +45,7 @@ class WineInfo extends React.Component {
 
 
   state = {
-    price: 125,
+    price: 0,
     quantity: 1,
     total: 125
   }
@@ -53,7 +54,7 @@ class WineInfo extends React.Component {
     const bottleId = this.props.router.query.id;
     const [bottle] = this.props.wines.filter(wine => {
       return wine.id == bottleId;
-    })   
+    })
     this.setState({
       price: bottle.price,
       total: bottle.price
@@ -85,13 +86,25 @@ class WineInfo extends React.Component {
     this.validateQuantity(number)
   }
 
+  addItemToCart = () => {
+    const cartItem = {
+      productId: this.props.router.query.id,
+      quantity: this.state.quantity,
+      total: this.state.total
+    }
+    this.props.onAddItemToCart(cartItem)
+  }
+
   render() {
     const { classes, wines, router } = this.props;
-    const { price, total } = this.state
+    const { total } = this.state
     const bottleId = router.query.id;
     const [bottle] = wines.filter(wine => {
       return wine.id == bottleId;
     })
+
+
+
     return (
       <div>
         <Paper className={classes.root + ' w3-display-container'} elevation={1}>
@@ -160,8 +173,9 @@ class WineInfo extends React.Component {
               <Button
                 variant='contained'
                 color='primary'
+                onClick={this.addItemToCart}
               > Add To Cart
-            <AddShoppingCartIcon className={classes.rightIcon} />
+              <AddShoppingCartIcon className={classes.rightIcon} />
               </Button>
             </Link>
           </div>
@@ -181,4 +195,10 @@ const mapStateToProps = state => {
   }
 }
 
-export default InjectRedux(connect(mapStateToProps)(withStyles(styles)(withRouter(WineInfo))));
+const mapDispatchToProps = dispatch => {
+  return {
+    onAddItemToCart: (cartItem) => dispatch(actions.addItemToCart(cartItem))
+  }
+}
+
+export default InjectRedux(connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(withRouter(WineInfo))));
