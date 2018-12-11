@@ -43,7 +43,6 @@ const styles = theme => ({
 
 class WineInfo extends React.Component {
 
-
   state = {
     price: 0,
     quantity: 1,

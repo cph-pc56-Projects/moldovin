@@ -5,44 +5,9 @@ import MobileStepper from '@material-ui/core/MobileStepper';
 import Button from '@material-ui/core/Button';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
-
-const tutorialSteps = [
-  {
-    label: 'Lacrima Dulce',
-    imgPath:
-      '/static/assets/bottles/LacrimaDuulce.png',
-  },
-  {
-    label: 'Ch',
-    imgPath:
-      '/static/assets/bottles/2-whites-1-red.jpg',
-  },
-  {
-    label: 'Bali, Indonesia',
-    imgPath:
-      '/static/assets/bottles/mimi-chardonnay-2.jpg',
-  },
-  {
-    label: 'NeONBRAND Digital Marketing, Las Vegas, United States',
-    imgPath:
-      '/static/assets/bottles/Mimi-Chardonnay.jpg',
-  },
-  {
-    label: 'Goč, Serbia',
-    imgPath:
-      '/static/assets/bottles/Mimi-Rose.jpg',
-  },
-  {
-    label: 'Goč, Serbia',
-    imgPath:
-      '/static/assets/bottles/Mimi-Rosu-De-Bulboaca.jpg',
-  },
-  {
-    label: 'Goč, Serbia',
-    imgPath:
-      '/static/assets/bottles/Mimi-Sauvignon-blanc.jpg',
-  }
-];
+import { withRouter } from 'next/router'
+import InjectRedux from './InjectRedux';
+import { connect } from 'react-redux';
 
 const styles = theme => ({
 
@@ -65,10 +30,12 @@ const styles = theme => ({
   },
 });
 
-class TextMobileStepper extends React.Component {
+class WineImages extends React.Component {
   state = {
     activeStep: 0,
   };
+
+
 
 
   handleNext = () => {
@@ -83,17 +50,21 @@ class TextMobileStepper extends React.Component {
     }));
   };
 
-  render() {    
+  render() {
     const { classes, theme } = this.props;
     const { activeStep } = this.state;
-    const maxSteps = tutorialSteps.length;
+    const bottleId = this.props.router.query.id
+    const wineBottle = this.props.products.wines.filter(item => item.id == bottleId)
+    const [bottle] = wineBottle;    
+    const wineImages = bottle.wineImages;
+    const maxSteps = wineImages.length;
 
     return (
       <div className={classes.root}>
         <img
           className={classes.img}
-          src={tutorialSteps[activeStep].imgPath}
-          alt={tutorialSteps[activeStep].label}
+          src={wineImages[activeStep].imgPath}
+          alt={wineImages[activeStep].label}
         />
         <MobileStepper
           steps={maxSteps}
@@ -113,15 +84,20 @@ class TextMobileStepper extends React.Component {
               Back
             </Button>
           }
-        />        
+        />
       </div>
     );
   }
 }
-
-TextMobileStepper.propTypes = {
+WineImages.propTypes = {
   classes: PropTypes.object.isRequired,
   theme: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles, { withTheme: true })(TextMobileStepper);
+const mapStateToProps = state => {
+  return {
+    products: state.products
+  }
+}
+
+export default InjectRedux(connect(mapStateToProps)(withStyles(styles, { withTheme: true })(withRouter(WineImages))));

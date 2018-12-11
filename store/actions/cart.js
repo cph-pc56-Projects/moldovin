@@ -13,3 +13,10 @@ export const removeItemFromCart = (productId) => {
         productId
     }
 }
+
+export const updateItemCart = (cartItem) => {
+    return {
+        type: actionTypes.UPDATE_ITEM_FROM_CART,
+        cartItem
+    }
+}

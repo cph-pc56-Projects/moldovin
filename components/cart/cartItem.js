@@ -39,6 +39,27 @@ const styles = theme => ({
 
 class CartItem extends React.Component {
 
+    validateQuantity = (number) => {
+        const bottleId = this.props.wineBottle[0].id;
+        let quantity;
+        if (number <= 0 || number > 50) {
+            quantity = 1
+        } else {
+            quantity = number
+        }        
+        const cartItem = {
+            productId: bottleId,
+            quantity: Number(quantity),
+            total: Number(this.props.wineBottle[0].price) * Number(quantity)
+        }
+        this.props.onUpdateItemCart(cartItem)
+    }
+
+    handleInputChange = (event) => {
+        this.validateQuantity(event.target.value)
+    }
+
+
     removeItem = () => {
         const bottleId = this.props.wineBottle[0].id;
         this.props.onRemoveItem(bottleId);
@@ -46,7 +67,7 @@ class CartItem extends React.Component {
 
     render() {
         const { classes, wineBottle, cartItem } = this.props;
-        const [bottle] = wineBottle;        
+        const [bottle] = wineBottle;
 
         return (
             <div className={classes.root}>
@@ -74,14 +95,16 @@ class CartItem extends React.Component {
                                         className={classes.input}
                                         type='number'
                                         value={cartItem.quantity}
+                                        onChange={this.handleInputChange}
+                                        
                                     />
                                 </Typography>
                             </Grid>
                             <Grid item>
-                                <Button 
-                                size='small' 
-                                color='secondary'
-                                onClick={this.removeItem}
+                                <Button
+                                    size='small'
+                                    color='secondary'
+                                    onClick={this.removeItem}
                                 >Remove</Button>
                             </Grid>
                         </Grid>
@@ -108,7 +131,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onRemoveItem: (productId) => dispatch(actions.removeItemFromCart(productId))
+        onRemoveItem: (productId) => dispatch(actions.removeItemFromCart(productId)),
+        onUpdateItemCart: (cartItem) => dispatch(actions.updateItemCart(cartItem))
     }
 }
 
