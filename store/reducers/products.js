@@ -1,4 +1,5 @@
-
+import * as actionTypes from '../actions/actionTypes';
+import { updateObject } from '../utility'
 const initialState = {
     wines: [
         {
@@ -156,11 +157,19 @@ const initialState = {
             ]
 
         },
-    ]
+    ],
+    error: false
 }
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
+        case actionTypes.SET_PRODUCTS:
+            const fullObject = {
+                wines: action.wines
+            }
+            return updateObject(state, fullObject)
+        case actionTypes.FETCH_PRODUCTS_FAILED:
+            return updateObject(state, action.error)
         default:
             return state
     }

@@ -6,6 +6,8 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Grid from '@material-ui/core/Grid';
+import InjectRedux from '../InjectRedux';
+import { connect } from 'react-redux';
 
 const products = [
   { name: 'Product 1', desc: 'A nice thing', price: '$9.99' },
@@ -35,23 +37,43 @@ const styles = theme => ({
 });
 
 function Review(props) {
-  const { classes } = props;
+  const { classes, cart } = props;
+  console.log('oder reiew cart', props)
+
+  // Displaying cart products in order summary
+  const wines = props.products.wines;
+  const listOfProducts = [];
+  cart.cartItems.forEach(item => {
+    wines.map(bottle => {
+      if (bottle.id == item.productId)
+        listOfProducts.push({ name: bottle.name, desc: bottle.type, price: bottle.price, quantity: item.quantity, total: item.total })
+    })
+  })
+
+
+  const itemsTotal = cart.cartItems.reduce((sum, itemTotal) => {
+    return sum + Number(itemTotal.total)
+  }, 0)
+
+  console.log('total', itemsTotal);
+
+
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
         Order summary
       </Typography>
       <List disablePadding>
-        {products.map(product => (
+        {listOfProducts.map(product => (
           <ListItem className={classes.listItem} key={product.name}>
-            <ListItemText primary={product.name} secondary={product.desc} />
-            <Typography variant="body2">{product.price}</Typography>
+            <ListItemText primary={product.name} secondary={`Qnt: ${product.quantity} x Price: ${product.price}`} />
+            <Typography variant="body2">{product.total}</Typography>
           </ListItem>
         ))}
         <ListItem className={classes.listItem}>
           <ListItemText primary="Total" />
           <Typography variant="subtitle1" className={classes.total}>
-            $34.06
+            {itemsTotal} DKK
           </Typography>
         </ListItem>
       </List>
@@ -89,4 +111,11 @@ Review.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Review);
+const mapStateToProps = state => {
+  return {
+    cart: state.cart,
+    products: state.products
+  }
+}
+
+export default InjectRedux(connect(mapStateToProps)(withStyles(styles)(Review)));
