@@ -51,11 +51,12 @@ function Review(props) {
   })
 
 
-  const itemsTotal = cart.cartItems.reduce((sum, itemTotal) => {
+  let itemsTotal = cart.cartItems.reduce((sum, itemTotal) => {
     return sum + Number(itemTotal.total)
   }, 0)
 
-  console.log('total', itemsTotal);
+  const shipping = 12;
+  itemsTotal += shipping;
 
 
   return (
@@ -71,16 +72,22 @@ function Review(props) {
           </ListItem>
         ))}
         <ListItem className={classes.listItem}>
+          <ListItemText secondary="Shipping" />
+          <Typography variant="subtitle2" className={classes.total}>
+            12 DKK
+          </Typography>          
+        </ListItem>
+        <ListItem className={classes.listItem}>
           <ListItemText primary="Total" />
           <Typography variant="subtitle1" className={classes.total}>
             {itemsTotal} DKK
-          </Typography>
+          </Typography>          
         </ListItem>
       </List>
       <Grid container spacing={16}>
         <Grid item xs={12} sm={6}>
           <Typography variant="h6" gutterBottom className={classes.title}>
-            Shipping
+            {shipping}
           </Typography>
           <Typography gutterBottom>John Smith</Typography>
           <Typography gutterBottom>{addresses.join(', ')}</Typography>
