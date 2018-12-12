@@ -1,10 +1,12 @@
+import React from 'react'
 import Layout from '../components/Layout';
-import WineCard from '../components/wineCard';
 import WineCards from '../components/WineCards'
 import InjectRedux from '../components/InjectRedux';
 import { connect } from 'react-redux';
+import * as actions from '../store/actions/products'
 
-const products = (props) => {    
+class Products extends React.Component  {        
+    render() {    
     return (
         <Layout>
         
@@ -20,7 +22,14 @@ const products = (props) => {
         
         </Layout>
 
-    )
+    )}
+    
 }
 
-export default InjectRedux(connect(state=>state)(products));
+// const mapDispatchToProps = dispatch => {
+//     return {
+//         onSetProducts: dispatch(actions.initProducts())
+//     }
+// }
+
+export default InjectRedux(connect(null,null)(Products));
