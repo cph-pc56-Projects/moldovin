@@ -1,8 +1,6 @@
-//import style from '../stylesheet/style.css'
-import Link from 'next/link'
 import Layout from '../components/Layout';
-// import { Button } from 'react-bootstrap';
-import Button from '@material-ui/core/Button'
+import Paper from '@material-ui/core/Paper';
+
 
 export default () => (
     <Layout>

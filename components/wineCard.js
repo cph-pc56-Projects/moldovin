@@ -9,6 +9,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Link from 'next/link';
 
+
 const styles = {
   card: {
     height: 400,
@@ -43,37 +44,36 @@ const styles = {
 };
 
 function WineCard(props) {
-  const { classes } = props;
-
-
+  const { classes, wineBottle } = props;  
+ 
   return (
     <Card className={classes.card}>
       <CardMedia
         className={classes.media}
-        image='/static/assets/DulceLacrima.png'
-        title='Lacrima Dulce'
+        image={wineBottle.displayImage}
+        title={wineBottle.title}
       />
       <CardContent>
-        <Typography variant="h5" component="h4">
-          Wine Name
+        <Typography variant="h6" component="h6">
+          {wineBottle.name}
         </Typography>
-        <Typography  color="textSecondary" noWrap>
-          Cabernet Sauvignon & Malbec & Shiraz
+        <Typography color="textSecondary" noWrap>
+          {wineBottle.type}
         </Typography>
-        
+
       </CardContent>
       <CardActions>
         <div className={classes.button}>
-          <Link href='/wine'>
-            <Button              
+          <Link href={`/wine?id=${wineBottle.id}`}>
+            <Button
               size="small"
               variant='contained'
               style={{ background: '#404040', color: 'white' }}
             >
-              145 DKK
+              {wineBottle.price} DKK
           </Button>
           </Link>
-        </div>        
+        </div>
 
       </CardActions>
     </Card>
@@ -83,5 +83,7 @@ function WineCard(props) {
 WineCard.propTypes = {
   classes: PropTypes.object.isRequired,
 };
+
+
 
 export default withStyles(styles)(WineCard);
