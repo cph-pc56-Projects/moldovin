@@ -1,4 +1,4 @@
-# moldovin
+## Moldovin
 MoldoVin repository for final thesis project.
 
 #### Technology Stack
