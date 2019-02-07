@@ -1,5 +1,5 @@
 # moldovin
-MoldoVin repository for final thesis project
+MoldoVin repository for final thesis project.
 
 #### Technology Stack
 - Front-End: Next.js
